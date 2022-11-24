@@ -1,5 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import { bringCharacters } from '../../services/apiCalls';
 import './Home.css';
 
@@ -58,10 +59,9 @@ const Home = () => {
                 characters.length > 0 &&
 
                 //Time to map the characters.........
-
                 characters.map(monster => {
                     return (
-                        <div className='mapCharactersDesign' key={monster.id}>{monster.name}</div>
+                        <CharacterCard value={monster} key={monster.id}/>
                     )
                 })
             }
